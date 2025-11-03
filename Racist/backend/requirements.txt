@@ -1,0 +1,5 @@
+flask>=2.2,<3.0
+face-recognition
+pillow
+numpy
+scikit-learn

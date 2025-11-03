@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facial Recognition Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Group Detection System</h1>
+      <p>
+        Detect and identify faces as Group A or Group J in real-time.
+      </p>
+    </header>
+    <main>
+      <section class="camera">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="snapshot" width="640" height="480" hidden></canvas>
+      </section>
+      <section class="actions">
+        <div class="buttons">
+          <button id="startCameraBtn">Start Camera</button>
+        </div>
+        <div class="field">
+          <label for="groupSelect">Select Group</label>
+          <select id="groupSelect">
+            <option value="A">Group A</option>
+            <option value="J">Group J</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <button id="registerBtn" disabled>Register to Group</button>
+          <button id="realTimeBtn" disabled>Start Real-Time Detection</button>
+        </div>
+        <div class="buttons secondary">
+          <button id="batchUploadBtn">Batch Upload</button>
+          <button id="refreshFacesBtn">Refresh Groups</button>
+          <button id="clearFacesBtn">Clear Database</button>
+        </div>
+        <input type="file" id="batchFileInput" accept="image/*" multiple hidden />
+      </section>
+      <section class="status">
+        <h2>Status</h2>
+        <div id="statusMessage">Waiting for action.</div>
+        <h3>Registered Groups</h3>
+        <ul id="knownFaces"></ul>
+      </section>
+    </main>
+    <footer>
+      <small>Camera data is processed locally before being sent to the server.</small>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
